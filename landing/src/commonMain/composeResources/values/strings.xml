@@ -1,0 +1,6 @@
+<resources>
+    <string name="main_screen_title">Github Users</string>
+    <string name="main_back_btn_description">backBtn</string>
+    <string name="no_network_connection">No network connection, please check</string>
+    <string name="something_when_wrong">Sorry, something went wrong, please back later</string>
+</resources>
