@@ -1,3 +1,5 @@
+import java.util.*
+
 plugins {
     alias(libs.plugins.kotlinMultiplatform)
     alias(libs.plugins.androidLibrary)
@@ -34,6 +36,7 @@ kotlin {
             implementation(libs.ktor.client.android)
         }
         commonMain.dependencies {
+            implementation(projects.core.coroutines)
             implementation(libs.parcelize)
             implementation(libs.kotlinx.coroutines.core)
             implementation(libs.kotlinx.serialization.json)
@@ -41,6 +44,7 @@ kotlin {
             implementation(libs.koin.core)
             implementation(libs.androidx.room.runtime)
             implementation(libs.sqlite.bundled)
+            implementation(libs.kermit.logger)
         }
         iosMain.dependencies {
             implementation(libs.ktor.client.darwin)
@@ -48,6 +52,10 @@ kotlin {
     }
 }
 
+val secretKeyProperties by lazy {
+    val secretKeyPropertiesFile = rootProject.file("secrets.properties")
+    Properties().apply { secretKeyPropertiesFile.inputStream().use { secret -> load(secret) } }
+}
 buildConfig {
     packageName = "hoa.kv.githubadmin.repository"
     useKotlinOutput { internalVisibility = true }
@@ -55,6 +63,16 @@ buildConfig {
         "String",
         "API_ENDPOINT",
         "\"https://api.github.com\""
+    )
+    buildConfigField(
+        "String",
+        "RIJKSMUSEUM_HOST",
+        "\"www.rijksmuseum.nl\""
+    )
+    buildConfigField(
+        "String",
+        "RIJKSMUSEUM_API_KEY",
+        "\"${secretKeyProperties["rijksmuseum.api.key"]}\""
     )
 }
 

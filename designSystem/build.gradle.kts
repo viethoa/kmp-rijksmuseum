@@ -33,12 +33,13 @@ kotlin {
             implementation(compose.components.uiToolingPreview)
             implementation(libs.coil.compose)
             implementation(libs.coil.network.ktor)
+            implementation(libs.kermit.logger)
         }
     }
 }
 
 android {
-    namespace = "hoa.kv.githubadmin.designsystem"
+    namespace = "hoa.kv.rijksmuseum.designsystem"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
     defaultConfig {
         minSdk = libs.versions.android.minSdk.get().toInt()
@@ -47,4 +48,10 @@ android {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
+}
+
+compose.resources {
+    publicResClass = true
+    packageOfResClass = "hoa.kv.rijksmuseum.designsystem.resources"
+    generateResClass = always
 }

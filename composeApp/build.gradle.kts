@@ -33,23 +33,25 @@ kotlin {
             implementation(libs.koin.android)
         }
         commonMain.dependencies {
+            implementation(projects.core.coroutines)
             implementation(projects.repository)
             implementation(projects.designSystem)
-            implementation(projects.userDetails)
-            implementation(projects.landing)
+            implementation(projects.home)
             implementation(compose.ui)
             implementation(compose.runtime)
             implementation(compose.material3)
+            implementation(libs.navigation.compose)
             implementation(libs.koin.core)
             implementation(libs.koin.compose)
             implementation(libs.koin.composeVM)
-            implementation(libs.navigation.compose)
+            implementation(libs.coil.compose)
+            implementation(libs.coil.network.ktor)
         }
     }
 }
 
 android {
-    namespace = "kv.hoa.githubadmin"
+    namespace = "kv.hoa.rijksmuseum"
     compileSdk = libs.versions.android.compileSdk.get().toInt()
 
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
@@ -57,7 +59,7 @@ android {
     sourceSets["main"].resources.srcDirs("src/commonMain/resources")
 
     defaultConfig {
-        applicationId = "kv.hoa.githubadmin"
+        applicationId = "kv.hoa.rijksmuseum"
         minSdk = libs.versions.android.minSdk.get().toInt()
         targetSdk = libs.versions.android.targetSdk.get().toInt()
         versionCode = 1

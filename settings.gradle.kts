@@ -1,4 +1,4 @@
-rootProject.name = "GithubAdmin"
+rootProject.name = "kmp-rijksmuseum"
 enableFeaturePreview("TYPESAFE_PROJECT_ACCESSORS")
 
 pluginManagement {
@@ -31,5 +31,5 @@ dependencyResolutionManagement {
 include(":composeApp")
 include(":repository")
 include(":designSystem")
-include(":landing")
-include(":userDetails")
+include(":core:coroutines")
+include(":home")

@@ -8,14 +8,14 @@ androidx-core-ktx = "1.13.1"
 androidx-espresso-core = "3.6.1"
 androidx-lifecycle = "2.8.0"
 androidx-test-junit = "1.2.1"
-compose-plugin = "1.6.11"
+compose-plugin = "1.7.1"
 junit = "4.13.2"
 kotlin = "2.0.20"
 buildConfig = "5.5.0"
 coil = "3.0.0-alpha10"
 koin = "4.0.0"
 koinComposeMultiplatform = "4.0.0"
-ktor = "3.0.0-rc-1"
+ktor = "3.0.1"
 navigationCompose = "2.7.0-alpha07"
 kotlinx_serialization_json = "1.7.3"
 coroutines = "1.9.0"
@@ -23,6 +23,7 @@ parcelize = "0.9.0"
 androidx-room = "2.7.0-alpha07"
 ksp = "2.0.10-1.0.24"
 sqlite = "2.5.0-alpha07"
+kermit = "2.0.4"
 
 [libraries]
 kotlin-test = { module = "org.jetbrains.kotlin:kotlin-test", version.ref = "kotlin" }
@@ -49,12 +50,14 @@ ktor-client-serialization = { group = "io.ktor", name = "ktor-client-serializati
 ktor-client-content-negotiation = { group = "io.ktor", name = "ktor-client-content-negotiation", version.ref = "ktor" }
 ktor-serialization-kotlinx-json = { group = "io.ktor", name = "ktor-serialization-kotlinx-json", version.ref = "ktor" }
 kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-core", version.ref = "coroutines" }
+kotlinx-coroutines-android = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-android", version.ref = "coroutines" }
 kotlinx_serialization_json = { module = "org.jetbrains.kotlinx:kotlinx-serialization-json", version.ref = "kotlinx_serialization_json" }
 parcelize = { module = "dev.icerock.moko:parcelize", version.ref = "parcelize" }
 androidx-room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "androidx-room" }
 androidx-room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "androidx-room" }
 sqlite-bundled = { module = "androidx.sqlite:sqlite-bundled", version.ref = "sqlite" }
 navigation-compose = { module = "org.jetbrains.androidx.navigation:navigation-compose", version.ref = "navigationCompose" }
+kermit-logger = { module = "co.touchlab:kermit", version.ref = "kermit" }
 
 
 [bundles]
